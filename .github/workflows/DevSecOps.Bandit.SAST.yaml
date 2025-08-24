@@ -29,8 +29,8 @@ jobs:
     - name: Run Bandit SAST scan
       run: |
         mkdir -p reports
-        bandit -c bandit.yaml -r . -f json -o reports/bandit-report.json || true
-        bandit -c bandit.yaml -r . -f txt -o reports/bandit-report.txt || true
+        bandit -r . -f json -o reports/bandit-report.json || true
+        bandit -r . -f txt -o reports/bandit-report.txt || true
         
     - name: Upload SAST reports
       uses: actions/upload-artifact@v4
